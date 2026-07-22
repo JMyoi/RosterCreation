@@ -1,0 +1,44 @@
+.create-player form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 360px;
+}
+
+.create-player label {
+  font-size: 14px;
+  color: var(--text-h);
+  margin-top: 12px;
+}
+
+.create-player input,
+.create-player select {
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.create-player button {
+  margin-top: 20px;
+  align-self: flex-start;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.create-player button:hover {
+  border-color: var(--accent-border);
+}
+
+.confirmation {
+  margin-top: 20px;
+  color: var(--text-h);
+}
