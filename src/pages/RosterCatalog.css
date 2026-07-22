@@ -1,0 +1,12 @@
+.roster-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin-top: 20px;
+}
+
+.roster-catalog .form-error {
+  margin-top: 20px;
+  color: #d92d20;
+}

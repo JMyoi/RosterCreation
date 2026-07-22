@@ -1,0 +1,39 @@
+.player-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.player-card-info h3 {
+  margin: 0 0 4px;
+  color: var(--text-h);
+}
+
+.player-card-info p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.player-card-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.icon-button {
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+}

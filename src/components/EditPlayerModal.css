@@ -1,0 +1,80 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.modal-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-card label {
+  font-size: 14px;
+  color: var(--text-h);
+  margin-top: 12px;
+}
+
+.modal-card input,
+.modal-card select {
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.modal-card button {
+  margin-top: 20px;
+  align-self: flex-start;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.modal-card button:hover {
+  border-color: var(--accent-border);
+}
+
+.modal-card button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.modal-card .form-error {
+  margin-top: 12px;
+  color: #d92d20;
+}

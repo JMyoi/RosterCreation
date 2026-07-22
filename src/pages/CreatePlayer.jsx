@@ -1,29 +1,34 @@
 import { useState } from 'react'
+import { createPlayer } from '../api/players.js'
+import { POSITIONS } from '../utils/positions.js'
 import './CreatePlayer.css'
-
-const POSITIONS = [
-  'Point Guard',
-  'Shooting Guard',
-  'Small Forward',
-  'Power Forward',
-  'Center',
-]
 
 const initialForm = { name: '', height: '', position: POSITIONS[0] }
 
 function CreatePlayer() {
   const [form, setForm] = useState(initialForm)
   const [lastCreated, setLastCreated] = useState(null)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(null)
 
   function handleChange(event) {
     const { name, value } = event.target
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
-    setLastCreated(form)
-    setForm(initialForm)
+    setSubmitting(true)
+    setError(null)
+    try {
+      const created = await createPlayer(form)
+      setLastCreated(created)
+      setForm(initialForm)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -66,8 +71,12 @@ function CreatePlayer() {
           ))}
         </select>
 
-        <button type="submit">Create Player</button>
+        <button type="submit" disabled={submitting}>
+          {submitting ? 'Creating…' : 'Create Player'}
+        </button>
       </form>
+
+      {error && <p className="form-error">{error}</p>}
 
       {lastCreated && (
         <p className="confirmation">

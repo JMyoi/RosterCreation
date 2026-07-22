@@ -38,7 +38,17 @@
   border-color: var(--accent-border);
 }
 
+.create-player button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 .confirmation {
   margin-top: 20px;
   color: var(--text-h);
+}
+
+.form-error {
+  margin-top: 20px;
+  color: #d92d20;
 }
